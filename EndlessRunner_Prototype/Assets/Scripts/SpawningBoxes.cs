@@ -9,6 +9,8 @@ public class SpawningBoxes : MonoBehaviour
     private float t;
 
     public GameObject boxPrefab;
+
+    public float spawnDelay;
     void Start()
     {
         t = 0;
@@ -18,7 +20,7 @@ public class SpawningBoxes : MonoBehaviour
     void Update()
     {
         t += Time.deltaTime;
-        if (t > 4)
+        if (t > spawnDelay)
         {
             t = 0;
             int randomNumber = Random.Range(0, spawnPositions.Length);
