@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -42,8 +43,16 @@ public class PlayerMovementScript : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
+        Vector2 checkIfw = context.ReadValue<Vector2>();
+        if (checkIfw.y != 0)
+        {
 
-        movement = context.ReadValue<Vector2>();
+        }
+        else
+        {
+            movement = context.ReadValue<Vector2>();
+        }
+            
 
     }
     

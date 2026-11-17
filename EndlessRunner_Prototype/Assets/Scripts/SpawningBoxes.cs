@@ -10,6 +10,8 @@ public class SpawningBoxes : MonoBehaviour
 
     public GameObject boxPrefab;
 
+    public List<GameObject> spawnedBoxes;
+
     public float spawnDelay;
     void Start()
     {
@@ -25,8 +27,8 @@ public class SpawningBoxes : MonoBehaviour
             t = 0;
             int randomNumber = Random.Range(0, spawnPositions.Length);
 
-            Instantiate(boxPrefab, spawnPositions[randomNumber]);
-
+            GameObject spawnedBox = Instantiate(boxPrefab, spawnPositions[randomNumber]);
+            spawnedBoxes.Add(spawnedBox);
         }
     }
 }
