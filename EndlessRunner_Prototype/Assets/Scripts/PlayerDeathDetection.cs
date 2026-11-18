@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerDeathDetection : MonoBehaviour
 {
     public SpawningBoxes spawnBoxesScript;
+    public ScoreKeeper scoreScript;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,5 +26,6 @@ public class PlayerDeathDetection : MonoBehaviour
             Destroy(objectToRemove);
             spawnBoxesScript.spawnedBoxes.Remove(objectToRemove);
         }
+        scoreScript.score = 0;
     }
 }
